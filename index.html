@@ -6,263 +6,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>행성 여행 상품</title>
-    <link>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
-
-        * {
-            font-family: 'Nanum Brush Script', cursive;
-        }
-
-        #comment-list ul {
-            font-size: 20px;
-            font-weight: 350;
-        }
-
-        /* 전체 페이지 스타일 */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        /* 헤더 스타일 */
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 40px;
-        }
-
-        header nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        header nav li {
-            margin-right: 20px;
-        }
-
-        header nav li:last-child {
-            margin-right: 0;
-        }
-
-        header nav a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        header nav a:hover {
-            text-decoration: underline;
-        }
-
-        /* 섹션 스타일 */
-        section {
-            padding: 20px;
-            margin-bottom: 30px;
-        }
-
-        section h2 {
-            font-size: 30px;
-            margin-top: 0;
-        }
-
-        /* 푸터 스타일 */
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        /* 추가 스타일 */
-        .btn {
-            height: 15px;
-            width: 1500px;
-            margin: 20px auto 20px auto;
-            padding: 20px 20px 20px 20px;
-
-            display: flex;
-            flex-direction: row;
-            /* align-items: center; */
-            /* justify-content: center; */
-
-            margin-top: 20px;
-            margin-left: 75px;
-        }
-
-        .btn>button:hover {
-            text-decoration: underline;
-            transform: scale(1.25);
-            cursor: pointer;
-        }
-
-        .space {
-            width: 15px;
-            height: auto;
-            display: inline-block;
-        }
-
-        .pointer:hover {
-            cursor: pointer;
-        }
-
-        .start {
-            animation: fadeInUp 1s ease-in-out;
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-                background-color: rgba(255, 255, 255, 0);
-                transform: translate3d(0, 100%, 0);
-            }
-
-            75% {
-                opacity: 1;
-                box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-                background-color: rgba(255, 255, 255, 1);
-                transform: none;
-            }
-        }
-    </style>
-    <script>
-        // 댓글 목록을 저장할 배열
-        let comments = [];
-
-        // 댓글 등록 버튼을 클릭하면 실행되는 함수
-        function submitComment() {
-            // 입력된 댓글 내용과 작성자 이름 가져오기
-            const name = document.getElementById("name").value;
-            const comment = document.getElementById("comment").value;
-
-            // 만약 name이 공백이거나 비어있다면 알림창을 띄움
-            if (name.trim() === "") {
-                alert("Nickname을 입력해주세요.")
-                return;
-            }
-            
-            // 만약 commen가 공백이거나 비어있다면 알림창을 띄움
-            if (comment.trim() === "") {
-                alert("변경을 요구하는 사항을 입력해주세요.")
-                return;
-            }
-
-            // 댓글 목록에 추가하기
-            comments.push({ name, comment });
-
-            // 입력 폼 초기화하기
-            document.getElementById("name").value = "";
-            document.getElementById("comment").value = "";
-
-            // 댓글 목록 업데이트하기
-            updateCommentList();
-        }
-
-        // 댓글 목록을 업데이트하는 함수
-        function updateCommentList() {
-            const commentList = document.getElementById("comment-list").querySelector("ul");
-
-            // 댓글 목록 초기화하기
-            commentList.innerHTML = "";
-
-            // 댓글 목록 추가하기
-            comments.forEach(comment => {
-                const li = document.createElement("li");
-                li.innerText = `${comment.name}: ${comment.comment}`;
-                commentList.appendChild(li);
-            });
-        }
-
-        window.onload = function () {
-            // 페이지 로드 시 댓글 목록 업데이트하기
-            updateCommentList();
-        }
-
-
-    </script>
-
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <header>
-    <h1 onclick="window.location.href='url'" style="font-weight: 300;"
-        class="pointer">행성 여행 상품!</h1>
+    <h1>행성 여행 상품</h1>
     <nav>
         <ul>
-            <div class="btn">
-                <button type="button"
-                    onclick="window.location.href=('url');"
-                    style="background: none; border: none; width: 150px; height: 50px;font-size: 1.5em;color: white;">btn1</button>
-                <div class="space">
-                </div>
-                <button type="button"
-                    onclick="window.location.href=('url');"
-                    style="background: none; border: none; width: 150px; height: 50px;font-size: 1.5em;color: white;">btn2</button>
-                <div class="space">
-                </div>
-                <button type="button"
-                    onclick="window.location.href=('url');"
-                    style="background: none; border: none; width: 150px; height: 50px;font-size: 1.5em;color: white;">btn3</button>
-                <div class="space">
-                </div>
-                <button type="button"
-                    onclick="window.location.href=('url');"
-                    style="background: none; border: none; width: 150px; height: 50px;font-size: 1.5em;color: white;">btn4</button>
-            </div>
+            <li><a href="/">홈</a></li>
+            <li><a href="#">상품</a></li>
+            <li><a href="#">고객센터</a></li>
+            <li><a href="#">주문 확인</a></li>
         </ul>
     </nav>
 </header>
 
 <body>
-    <br><br><br><br><br><br><br>
-    <div class="start">
+    <br><br><br>
+    <div>
         <div style="display:inline-block;vertical-align:top;">
-            <img src="image_url"
-                alt="img" style="box-shadow: 0px 0px 10px 0px; width: 600px; height: 400px;" />
+            <img src="https://imgnn.seoul.co.kr/img/upload/2021/09/23/SSI_20210923104952_V.jpg" alt="img" style="box-shadow: 0px 0px 10px 0px; width: 600px; height: 400px;" />
         </div>
         <div style="display:inline-block;">
-            <h1 style="font-size: 250%; font-weight: 350;">제목</h1>
+            <h1 style="font-size: 250%; font-weight: 350;">행성 여행을 가고 싶나요?</h1>
             <h3 style="font-size: 150%; font-weight: 350;">내용
             </h3>
         </div>
         <br><br><br>
-        <div style="display:inline-block;">
-            <h1 style="font-size: 250%; font-weight: 350;">제목</h1>
-            <h3 style="font-size: 150%; font-weight: 350;">내용
-            </h3>
-        </div>
-    </div>
-    <br><br><br><br>
-    <h2>Comment for change</h2>
-    <form style="margin-left: 10px;" id="comment-form">
-        <label for="name" style="font-size: 1.25em;">Nickname:</label>
-        <input type="text" id="name" name="name" required><br><br>
-        <label for="comment" style="font-size: 1.25em;" required>Comment:</label><br>
-        <textarea id="comment" name="comment" rows="4" cols="50"></textarea><br><br>
-
-        <input type="submit" value="Leave a comment" style="font-size: 1.25em;" class="pointer"
-            onclick="submitComment()">
-    </form>
-    <div id="comment-list">
-        <h2>Comment list</h2>
-        <ul>
-            <!-- 이곳에 댓글 목록이 추가됩니다 -->
-        </ul>
-    </div>
-    <br><br><br><br>
-    <br><br><br><br><br>
-    <div style="background-color: #333; box-shadow: 0px 3px 3px rgba(0,0,0,0.3); text-align: left;">
-        <a onclick="window.location.href=('https://cgj0079.github.io/about_me/');" target="_blank" rel="noopener"
-            style="color: white; text-decoration: none; font-size: 125%;  cursor: pointer;">made
-            by 최국준</a>
     </div>
 </body>
+
+<main>
+    <section>
+        <h2>상품</h2>
+        <div class="product">
+            <img src="https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRtqGYOVmn7rlUHM47dO2MUGjjqp-NkClqUJ7QIxAwGAulcM5kvScQrZSkfglqd92ua" alt="상품1" style="box-shadow: 0px 0px 10px 0px; width: 400px; height: 400px;">
+            <h3>금성</h3>
+            <p>상품 설명</p>
+            <p>가격: 500만₩</p>
+            <button>구매하러 가기!</button>
+        </div>
+        <br><br>
+        <div class="product">
+            <img src="https://i.namu.wiki/i/twApqPOskgOFPRVt6b-IcbqUHPN11Ts4pBGIDAb2h_CLiPOMCpCQTsAG6ele5KFOXNBPOBX0_Gf0I5Yp_MPVSw.webp" alt="상품2" style="box-shadow: 0px 0px 10px 0px; width: 400px; height: 400px;">
+            <h3>천왕성</h3>
+            <p>상품 설명</p>
+            <p>가격: 300만₩</p>
+            <button>구매하러 가기!</button>
+        </div>
+    </section>
+    <br>
+    <section>
+        <h2>패키지</h2>
+        <div class="product">
+            <img src="product3.jpg" alt="상품3">
+            <h3>금성 천왕성 패키지</h3>
+            <p>상품 설명</p>
+            <p>가격: 700만₩</p>
+            <button>구매하러 가기!</button>
+        </div>
+    </section>
+</main>
 
 </html>
