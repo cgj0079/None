@@ -111,3 +111,11 @@
                 transform: none;
             }
         }
+        
+        .product>button {
+                background: none;
+                border: none;
+                width: 150px;
+                height: 50px;
+                color: black;
+        }
